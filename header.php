@@ -18,14 +18,25 @@
 
 <?php echo '<body class="'.join(' ', get_body_class()).'">'.PHP_EOL; ?>
 
-<div class="container-fluid">
-    <nav class="nav-main" role="navigation">
-      <ul class="menu-toggle">
-        <li class="menu-bar bar-1">
-        <li class="menu-bar bar-3">
-        <li class="menu-bar bar-6">
-        <li class="menu-bar bar-7">
+  <nav id="hexNav">
+    <div id="menuBtn">
+      <svg viewbox="0 0 100 100">
+        <polygon points="50 2 7 26 7 74 50 98 93 74 93 26" fill="transparent" stroke-width="4" stroke="#585247" stroke-dasharray="0,0,300"/>
+      </svg>
+      <span></span>
+    </div>
+  <div class="overlay">
+
+    <!-- <div class="text">
+      <ul>
+        <li>Pizzas</li>
+        <li>Tacos</li>
+        <li>Burger</li>
       </ul>
+    </div>
+  </div>
+  </nav> -->
+
 
       <?php
 
@@ -51,12 +62,5 @@
         wp_nav_menu( $defaults );
 
         ?>
-
-      <!-- <ul class="nav-links">
-          <li class="nav-link link-1"><a href="#" data-section="1">Newt Gingrinch</a></li>
-          <li class="nav-link link-2"><a href="#" data-section="2">Kermit</a></li>
-          <li class="nav-link link-3"><a href="#" data-section="3">Wembley</a></li>
-          <li class="nav-link link-4"><a href="#" data-section="4">Wicket</a></li>
-        </ul> -->
+        </div>
       </nav>
-    </div>
