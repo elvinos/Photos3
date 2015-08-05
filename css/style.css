@@ -1,40 +1,22 @@
 /*
-Error: Invalid CSS after "   }height:": expected expression (e.g. 1px, bold), was ".row-offcanvas-..."
-        on line 28 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/pages/_offcan.scss
-        from line 6 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/style.scss
+Error: Invalid CSS after "}": expected "}", was ""
+        on line 229 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/_globals.scss
+        from line 5 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/style.scss
 
-23:    .row-offcanvas-right
-24:    .sidebar-offcanvas {
-25:      right: -50%; /* 6 columns *\/
-26:    }height:
-27: 
-28:    .row-offcanvas-left
-29:    .sidebar-offcanvas {
-30:      left: -50%; /* 6 columns *\/
-31:    }
-32: 
-33:    .row-offcanvas-right.active {
+224:         color: white;
+225:       }
+226:     }
+227:   }
+228: }
 
 Backtrace:
-/Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/pages/_offcan.scss:28
-/Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/style.scss:6
+/Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/_globals.scss:229
+/Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/style.scss:5
 /Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:1162:in `expected'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/script/lexer.rb:221:in `expected!'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/script/parser.rb:573:in `assert_expr'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/script/parser.rb:62:in `parse'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:1024:in `sass_script'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:877:in `value!'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:750:in `block in try_declaration'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:1138:in `call'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:1138:in `rethrow'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:763:in `try_declaration'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:693:in `declaration_or_ruleset'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:658:in `block_child'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:650:in `block_contents'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:639:in `block'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:401:in `media_directive'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:219:in `special_directive'
-/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:194:in `directive'
+/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:1098:in `expected'
+/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:1093:in `tok!'
+/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:640:in `block'
+/Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:632:in `ruleset'
 /Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:657:in `block_child'
 /Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:650:in `block_contents'
 /Users/Alex/.rvm/gems/ruby-2.2.1/gems/sass-3.4.16/lib/sass/scss/parser.rb:117:in `stylesheet'
@@ -83,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"   }height:\": expected expression (e.g. 1px, bold), was \".row-offcanvas-...\"\A         on line 28 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/pages/_offcan.scss\A         from line 6 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/style.scss\A \A 23:    .row-offcanvas-right\A 24:    .sidebar-offcanvas {\A 25:      right: -50%; /* 6 columns */\A 26:    }height:\A 27: \A 28:    .row-offcanvas-left\A 29:    .sidebar-offcanvas {\A 30:      left: -50%; /* 6 columns */\A 31:    }\A 32: \A 33:    .row-offcanvas-right.active {"; }
+  content: "Error: Invalid CSS after \"}\": expected \"}\", was \"\"\A         on line 229 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/_globals.scss\A         from line 5 of /Users/Alex/Sites/Demo Site/bower_components/wordpress/wp-content/themes/Photos3/scss/style.scss\A \A 224:         color: white;\A 225:       }\A 226:     }\A 227:   }\A 228: }"; }
