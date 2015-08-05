@@ -27,13 +27,13 @@ function loopAnimateForward(type) {
     //   "float":"right",
     //   left:""
     // }, 100 );
-  }) } else {
+  }); } else {
     $('body>#isAnimating').remove();
     $('.imgBox img').css({
     'width':"",
     'max-width':'100%',
     'float': ''
-  })
+  });
 }
 }
 
@@ -58,4 +58,4 @@ $(document).keyup(function(e) {
 });
 
 
-})
+});
