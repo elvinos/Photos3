@@ -59,6 +59,24 @@ ul, menu, dir {
     -webkit-padding-start: 0px;
 }
 
+section{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  @include translate3d(-2000px, 0px, 0px);
+  @include transition(all 300ms ease-out);
+
+  img{
+     width: 100%;
+  }
+
+  &.active{
+    @include translate3d(0px, 0px, 0px);
+  }
+}
+
 .nav-main{
   position: fixed;
   background-color: white;
@@ -67,7 +85,7 @@ ul, menu, dir {
   left: 0;
   z-index: 100;
   @include transition(all 300ms ease-out);
-  // @include translate3d(-2000px, 0px, 0px);
+  @include translate3d(-2000px, 0px, 0px);
 
   li {
     list-style-type: none;
@@ -100,46 +118,46 @@ ul, menu, dir {
     }
   }
 
-//   &.loading{
-//     .menu-toggle{
-//         // @include translate3d(2000px, 0px, 0px);
-//         left: 50%;
-//         margin-left: -15px;
-//
-// 			.bar-1{
-// 				opacity: 0.0;
-// 			}
-//
-// 			.bar-3{
-// 				top: 0px;
-// 				width: 35px;
-// 				height: 35px;
-// 				background-color: transparent;
-// 				border: 5px solid $dark-grey;
-// 				opacity: 1.0;
-// 				@include border-radius(50%);
-// 				@include transition(all 100ms ease-out 0s);
-// 			}
-//
-// 			.bar-6{
-// 				opacity: 0.0;
-// 				@include transition(all 0ms ease-out 0s);
-// 			}
-//
-// 			.bar-7{
-// 				top: 20px;
-// 				width: 30px;
-// 				left: 8px;
-// 				opacity: 1.0;
-// 				@include border-radius(2px);
-//           animation-duration: 1s;
-//           animation-name: rotate;
-//           animation-iteration-count: infinite;
-//           animation-timing-function: linear;
-// 			}
-// 		}
-//   }
-// }
+  &.loading{
+    .menu-toggle{
+        @include translate3d(2000px, 0px, 0px);
+        left: 50%;
+        margin-left: -15px;
+
+			.bar-1{
+				opacity: 0.0;
+			}
+
+			.bar-3{
+				top: 0px;
+				width: 35px;
+				height: 35px;
+				background-color: transparent;
+				border: 5px solid $dark-grey;
+				opacity: 1.0;
+				@include border-radius(50%);
+				@include transition(all 100ms ease-out 0s);
+			}
+
+			.bar-6{
+				opacity: 0.0;
+				@include transition(all 0ms ease-out 0s);
+			}
+
+			.bar-7{
+				top: 20px;
+				width: 30px;
+				left: 8px;
+				opacity: 1.0;
+				@include border-radius(2px);
+          animation-duration: 1s;
+          animation-name: rotate;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+			}
+		}
+  }
+}
 
 .menu-toggle{
 	position: fixed;
@@ -149,8 +167,8 @@ ul, menu, dir {
 	top: 20px;
   left: 30px;
   cursor: pointer;
-  @include translate3d(40px, 0px, 0px);
-	@include transition(all 300ms ease-out 0ms);
+  @include translate3d(2000px, 0px, 0px);
+	@include transition(all 800ms ease-out 0ms);
 
   &:hover{
 
@@ -178,7 +196,7 @@ ul, menu, dir {
 	left: 0px;
 	background-color: $dark-grey;
 	position: absolute;
-	@include transition(all 300ms ease-out 0ms);
+	@include transition(all 800ms ease-out 0ms);
 	@include rotate(0deg);
 }
 
