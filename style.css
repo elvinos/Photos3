@@ -59,263 +59,140 @@ body > .container {
 /*
 Navagation Menu
 */
-/* line 52, ../scss/_globals.scss */
-ul, menu, dir {
-  display: block;
-  list-style-type: disc;
-  -webkit-margin-before: 1em;
-  -webkit-margin-after: 1em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
-}
-
-/* line 62, ../scss/_globals.scss */
-section {
-  position: absolute;
+/* line 253, ../scss/_globals.scss */
+#hevNav {
+  position: relative;
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+/* line 262, ../scss/_globals.scss */
+.overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
   top: 0;
   left: 0;
-  -moz-transform: translate3d(-2000px, 0px, 0px);
-  -webkit-transform: translate3d(-2000px, 0px, 0px);
-  transform: translate3d(-2000px, 0px, 0px);
-  -moz-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  -webkit-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-}
-/* line 71, ../scss/_globals.scss */
-section img {
-  width: 100%;
-}
-/* line 75, ../scss/_globals.scss */
-section.active {
-  -moz-transform: translate3d(0px, 0px, 0px);
-  -webkit-transform: translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
+  background: #34495e;
+  z-index: 20;
 }
 
-/* line 80, ../scss/_globals.scss */
-.nav-main {
-  position: fixed;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  z-index: 100;
-  -moz-transition: all 300ms ease-out;
-  -o-transition: all 300ms ease-out;
-  -webkit-transition: all 300ms ease-out;
-  transition: all 300ms ease-out;
-  -moz-transform: translate3d(-2000px, 0px, 0px);
-  -webkit-transform: translate3d(-2000px, 0px, 0px);
-  transform: translate3d(-2000px, 0px, 0px);
-}
-/* line 90, ../scss/_globals.scss */
-.nav-main li {
-  list-style-type: none;
-}
-/* line 94, ../scss/_globals.scss */
-.nav-main.active {
-  -moz-transform: translate3d(0px, 0px, 0px);
-  -webkit-transform: translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
-}
-/* line 97, ../scss/_globals.scss */
-.nav-main.active .menu-toggle {
-  -moz-transform: translate3d(0px, 0px, 0px);
-  -webkit-transform: translate3d(0px, 0px, 0px);
-  transform: translate3d(0px, 0px, 0px);
-  left: 50%;
-  margin-left: -15px;
-}
-/* line 101, ../scss/_globals.scss */
-.nav-main.active .menu-toggle .bar-1 {
-  top: -5px;
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  opacity: 0;
-}
-/* line 108, ../scss/_globals.scss */
-.nav-main.active .menu-toggle .bar-3 {
-  top: 13px;
-  -moz-transform: rotate(-50deg);
-  -ms-transform: rotate(-50deg);
-  -webkit-transform: rotate(-50deg);
-  transform: rotate(-50deg);
-}
-/* line 114, ../scss/_globals.scss */
-.nav-main.active .menu-toggle .bar-6 {
-  top: 13px;
-  -moz-transform: rotate(50deg);
-  -ms-transform: rotate(50deg);
-  -webkit-transform: rotate(50deg);
-  transform: rotate(50deg);
-}
-/* line 122, ../scss/_globals.scss */
-.nav-main.loading .menu-toggle {
-  -moz-transform: translate3d(2000px, 0px, 0px);
-  -webkit-transform: translate3d(2000px, 0px, 0px);
-  transform: translate3d(2000px, 0px, 0px);
-  left: 50%;
-  margin-left: -15px;
-}
-/* line 127, ../scss/_globals.scss */
-.nav-main.loading .menu-toggle .bar-1 {
-  opacity: 0.0;
-}
-/* line 131, ../scss/_globals.scss */
-.nav-main.loading .menu-toggle .bar-3 {
-  top: 0px;
-  width: 35px;
-  height: 35px;
-  background-color: transparent;
-  border: 5px solid #313131;
-  opacity: 1.0;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  -moz-transition: all 100ms ease-out 0s;
-  -o-transition: all 100ms ease-out 0s;
-  -webkit-transition: all 100ms ease-out;
-  -webkit-transition-delay: 0s;
-  transition: all 100ms ease-out 0s;
-}
-/* line 142, ../scss/_globals.scss */
-.nav-main.loading .menu-toggle .bar-6 {
-  opacity: 0.0;
-  -moz-transition: all 0ms ease-out 0s;
-  -o-transition: all 0ms ease-out 0s;
-  -webkit-transition: all 0ms ease-out;
-  -webkit-transition-delay: 0s;
-  transition: all 0ms ease-out 0s;
-}
-/* line 147, ../scss/_globals.scss */
-.nav-main.loading .menu-toggle .bar-7 {
-  top: 20px;
-  width: 30px;
-  left: 8px;
-  opacity: 1.0;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  animation-duration: 1s;
-  animation-name: rotate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-/* line 162, ../scss/_globals.scss */
-.menu-toggle {
-  position: fixed;
-  height: 50px;
-  width: 30px;
-  margin: 0 auto;
+/** MENU BUTTON ******************************************/
+/* line 273, ../scss/_globals.scss */
+#menuBtn {
+  position: absolute;
   top: 20px;
   left: 30px;
+  width: 50px;
+  height: 30px;
+  z-index: 1000;
+}
+/* line 279, ../scss/_globals.scss */
+#menuBtn svg {
+  display: block;
+}
+/* line 282, ../scss/_globals.scss */
+#menuBtn svg polygon:hover {
+  animation: hexHover 0.7s;
   cursor: pointer;
-  -moz-transform: translate3d(2000px, 0px, 0px);
-  -webkit-transform: translate3d(2000px, 0px, 0px);
-  transform: translate3d(2000px, 0px, 0px);
-  -moz-transition: all 800ms ease-out 0ms;
-  -o-transition: all 800ms ease-out 0ms;
-  -webkit-transition: all 800ms ease-out;
-  -webkit-transition-delay: 0ms;
-  transition: all 800ms ease-out 0ms;
 }
-/* line 175, ../scss/_globals.scss */
-.menu-toggle:hover .bar-1 {
-  top: -1px;
-}
-/* line 179, ../scss/_globals.scss */
-.menu-toggle:hover .bar-3 {
-  top: 10px;
-}
-/* line 183, ../scss/_globals.scss */
-.menu-toggle:hover .bar-6 {
-  top: 21px;
-}
-/* line 187, ../scss/_globals.scss */
-.menu-toggle:hover .menu-bar {
-  background-color: #eb2529;
-}
-
-/* line 193, ../scss/_globals.scss */
-.menu-bar {
-  width: 30px;
-  height: 5px;
-  left: 0px;
-  background-color: #313131;
+/* line 286, ../scss/_globals.scss */
+#menuBtn .bars {
+  box-sizing: initial;
   position: absolute;
-  -moz-transition: all 800ms ease-out 0ms;
-  -o-transition: all 800ms ease-out 0ms;
-  -webkit-transition: all 800ms ease-out;
-  -webkit-transition-delay: 0ms;
-  transition: all 800ms ease-out 0ms;
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+  top: 24px;
+  left: 25px;
+  width: 20px;
+  height: 2px;
+  padding: 8px 0;
+  background-clip: content-box;
+  background-color: #585247;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.5s;
+  pointer-events: none;
+}
+/* line 297, ../scss/_globals.scss */
+#menuBtn .bars:before, #menuBtn .bars:after {
+  position: absolute;
+  background-color: #585247;
+  content: '';
+  width: 20px;
+  height: 2px;
+  transition: transform 0.5s;
+}
+/* line 304, ../scss/_globals.scss */
+#menuBtn .bars:before {
+  top: 0;
+}
+/* line 304, ../scss/_globals.scss */
+#menuBtn .bars:after {
+  bottom: 0px;
 }
 
-/* line 203, ../scss/_globals.scss */
-.bar-1 {
-  top: 0px;
-  -moz-transform-origin: 0px 5px;
-  -ms-transform-origin: 0px 5px;
-  -webkit-transform-origin: 0px 5px;
-  transform-origin: 0px 5px;
+@keyframes hexHover {
+  0% {
+    stroke-dasharray: 0,0,300;
+  }
+  10% {
+    stroke-dasharray: 0,20,300;
+  }
+  100% {
+    stroke-dasharray: 300,20,300;
+  }
+}
+/** MENU ITEMS *******************************************/
+/* line 317, ../scss/_globals.scss */
+.active #menuBtn:hover svg polygon {
+  animation: none;
+}
+/* line 320, ../scss/_globals.scss */
+.active #menuBtn .bars {
+  background-color: transparent;
+}
+/* line 322, ../scss/_globals.scss */
+.active #menuBtn .bars:before {
+  transform: translatey(8px) rotate(45deg);
+}
+/* line 325, ../scss/_globals.scss */
+.active #menuBtn .bars:after {
+  transform: translatey(-8px) rotate(-45deg);
 }
 
-/* line 208, ../scss/_globals.scss */
-.bar-3 {
-  top: 8px;
+/* line 332, ../scss/_globals.scss */
+.overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #34495e;
 }
 
-/* line 212, ../scss/_globals.scss */
-.bar-6 {
-  top: 16px;
+/* line 342, ../scss/_globals.scss */
+ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* line 216, ../scss/_globals.scss */
-.bar-7 {
-  opacity: 0.0;
-  top: 8px;
-}
-
-/* line 221, ../scss/_globals.scss */
-.nav-links {
-  margin-top: 60px;
-  text-align: center;
-}
-/* line 225, ../scss/_globals.scss */
-.nav-links .menu-item {
-  font-size: 3vw;
+/* line 349, ../scss/_globals.scss */
+ul li {
+  list-style-type: none;
+  margin: 20px 0;
+  font-size: 26px;
   text-transform: uppercase;
-  -moz-transition: all 100ms ease-out;
-  -o-transition: all 100ms ease-out;
-  -webkit-transition: all 100ms ease-out;
-  transition: all 100ms ease-out;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
-/* line 232, ../scss/_globals.scss */
-.nav-links .menu-item a {
-  text-decoration: none;
-  color: #313131;
-  -moz-transition: all 100ms ease-out;
-  -o-transition: all 100ms ease-out;
-  -webkit-transition: all 100ms ease-out;
-  transition: all 100ms ease-out;
-}
-/* line 238, ../scss/_globals.scss */
-.nav-links .menu-item:hover {
-  background-color: #eb2529;
-}
-/* line 241, ../scss/_globals.scss */
-.nav-links .menu-item:hover a {
-  color: white;
+/* line 357, ../scss/_globals.scss */
+ul li:hover {
+  transform: translateX(-10px);
 }
 
 /* line 3, ../scss/pages/_offcan.scss */

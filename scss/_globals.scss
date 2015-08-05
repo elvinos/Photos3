@@ -49,198 +49,312 @@ body > .container {
 Navagation Menu
 */
 
-ul, menu, dir {
-    display: block;
-    list-style-type: disc;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 0px;
+// ul, menu, dir {
+//     display: block;
+//     list-style-type: disc;
+//     -webkit-margin-before: 1em;
+//     -webkit-margin-after: 1em;
+//     -webkit-margin-start: 0px;
+//     -webkit-margin-end: 0px;
+//     -webkit-padding-start: 0px;
+// }
+//
+// section{
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   @include translate3d(-2000px, 0px, 0px);
+//   @include transition(all 300ms ease-out);
+//
+//   img{
+//      width: 100%;
+//   }
+//
+//   &.active{
+//     @include translate3d(0px, 0px, 0px);
+//   }
+// }
+//
+// .nav-main{
+//   position: fixed;
+//   background-color: white;
+//   width: 100%;
+//   height: 100%;
+//   left: 0;
+//   z-index: 100;
+//   @include transition(all 300ms ease-out);
+//   @include translate3d(-2000px, 0px, 0px);
+//
+//   li {
+//     list-style-type: none;
+//   }
+//
+//   &.active{
+//     @include translate3d(0px, 0px, 0px);
+//
+//     .menu-toggle{
+//       @include translate3d(0px, 0px, 0px);
+//       left: 50%;
+//       margin-left: -15px;
+//       .bar-1{
+//         top: -5px;
+//         @include rotate(90deg);
+//         opacity: 0;
+//       }
+//
+//
+//       .bar-3{
+//         top: 13px;
+//         @include rotate(-50deg);
+//       }
+//
+//
+//       .bar-6{
+//         top: 13px;
+//         @include rotate(50deg);
+//       }
+//     }
+//   }
+//
+//   &.loading{
+//     .menu-toggle{
+//         @include translate3d(2000px, 0px, 0px);
+//         left: 50%;
+//         margin-left: -15px;
+//
+// 			.bar-1{
+// 				opacity: 0.0;
+// 			}
+//
+// 			.bar-3{
+// 				top: 0px;
+// 				width: 35px;
+// 				height: 35px;
+// 				background-color: transparent;
+// 				border: 5px solid $dark-grey;
+// 				opacity: 1.0;
+// 				@include border-radius(50%);
+// 				@include transition(all 100ms ease-out 0s);
+// 			}
+//
+// 			.bar-6{
+// 				opacity: 0.0;
+// 				@include transition(all 0ms ease-out 0s);
+// 			}
+//
+// 			.bar-7{
+// 				top: 20px;
+// 				width: 30px;
+// 				left: 8px;
+// 				opacity: 1.0;
+// 				@include border-radius(2px);
+//           animation-duration: 1s;
+//           animation-name: rotate;
+//           animation-iteration-count: infinite;
+//           animation-timing-function: linear;
+// 			}
+// 		}
+//   }
+// }
+//
+// .menu-toggle{
+// 	position: fixed;
+// 	height: 50px;
+// 	width: 30px;
+// 	margin: 0 auto;
+// 	top: 20px;
+//   left: 30px;
+//   cursor: pointer;
+//   @include translate3d(2000px, 0px, 0px);
+// 	@include transition(all 800ms ease-out 0ms);
+//
+//   &:hover{
+//
+//     .bar-1,{
+//       top: -1px;
+//     }
+//
+//     .bar-3{
+//       top: 10px;
+//     }
+//
+//     .bar-6{
+//       top: 21px;
+//     }
+//
+//     .menu-bar{
+//       background-color: $red;
+//     }
+//   }
+// }
+//
+// .menu-bar{
+// 	width: 30px;
+// 	height: 5px;
+// 	left: 0px;
+// 	background-color: $dark-grey;
+// 	position: absolute;
+// 	@include transition(all 800ms ease-out 0ms);
+// 	@include rotate(0deg);
+// }
+//
+// .bar-1{
+// 	top: 0px;
+// 	@include transform-origin(0px, 5px);
+// }
+//
+// .bar-3{
+// 	top: 8px;
+// }
+//
+// .bar-6{
+// 	top: 16px;
+// }
+//
+// .bar-7{
+// 	opacity: 0.0;
+// 	top: 8px;
+// }
+//
+// .nav-links{
+//   margin-top: 60px;
+//   text-align: center;
+//
+//    .menu-item{
+//     // padding: 1.5rem;
+//     font-size: 3vw;
+//     text-transform: uppercase;
+//     @include transition(all 100ms ease-out);
+//
+//
+//     a{
+//       text-decoration: none;
+//       color: $dark-grey;
+//       @include transition(all 100ms ease-out);
+//     }
+//
+//     &:hover{
+//       background-color: $red;
+//
+//       a{
+//         color: white;
+//       }
+//     }
+//   }
+// }
+
+$fTimming : 0.5;
+$hoverTextTimming:0.3;
+$menuItems: 6;
+$rotateStep: 60deg;
+
+#hevNav{
+  position:relative;
+  width:100%;
+  height:100%;
+  margin:0 auto;
+  overflow:hidden;
+  z-index:9999;
 }
 
-section{
-  position: absolute;
+.overlay {
+  display: none;
   width: 100%;
   height: 100%;
+  position: relative;
   top: 0;
   left: 0;
-  @include translate3d(-2000px, 0px, 0px);
-  @include transition(all 300ms ease-out);
+  background: #34495e;
+  z-index:20;
+}
+/** MENU BUTTON ******************************************/
+#menuBtn {
+	position: absolute;
+	top: 20px; left: 30px;
+	width: 50px; height:30px;
+	z-index: 1000;
 
-  img{
-     width: 100%;
+  svg{
+    display:block;
   }
+  svg polygon:hover{
+    animation: hexHover 0.7s;
+    cursor: pointer;
+  }
+  .bars {
+    box-sizing: initial;
+    position: absolute;
+    top: 24px; left: 25px;
+    width: 20px; height: 2px;
+    padding: 8px 0;
+    background-clip: content-box;
+    background-color: #585247;
+    transform: translate(-50%, -50%);
+    transition: background-color $fTimming+s;
+    pointer-events:none;
+    &:before, &:after {
+      position: absolute;
+      background-color: #585247;
+      content: '';
+      width: 20px; height: 2px;
+      transition: transform $fTimming+s;
+    }
+    &:before{top: 0;} &:after{bottom: 0px;}
+  }
+}
+@keyframes hexHover{
+  0%  {stroke-dasharray: 0,0,300;}
+  10% {stroke-dasharray: 0,20,300;}
+  100%{stroke-dasharray: 300,20,300;}
+}
+/** MENU ITEMS *******************************************/
 
-  &.active{
-    @include translate3d(0px, 0px, 0px);
+
+.active{
+  #menuBtn{
+    &:hover svg polygon{
+      animation: none;
+    }
+    .bars{
+      background-color: transparent;
+      &:before{
+        transform: translatey(8px) rotate(45deg);
+      }
+      &:after{
+        transform: translatey(-8px) rotate(-45deg);
+      }
+    }
   }
 }
 
-.nav-main{
-  position: fixed;
-  background-color: white;
+.overlay {
+  display: none;
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
   left: 0;
-  z-index: 100;
-  @include transition(all 300ms ease-out);
-  @include translate3d(-2000px, 0px, 0px);
-
-  li {
-    list-style-type: none;
-  }
-
-  &.active{
-    @include translate3d(0px, 0px, 0px);
-
-    .menu-toggle{
-      @include translate3d(0px, 0px, 0px);
-      left: 50%;
-      margin-left: -15px;
-      .bar-1{
-        top: -5px;
-        @include rotate(90deg);
-        opacity: 0;
-      }
-
-
-      .bar-3{
-        top: 13px;
-        @include rotate(-50deg);
-      }
-
-
-      .bar-6{
-        top: 13px;
-        @include rotate(50deg);
-      }
-    }
-  }
-
-  &.loading{
-    .menu-toggle{
-        @include translate3d(2000px, 0px, 0px);
-        left: 50%;
-        margin-left: -15px;
-
-			.bar-1{
-				opacity: 0.0;
-			}
-
-			.bar-3{
-				top: 0px;
-				width: 35px;
-				height: 35px;
-				background-color: transparent;
-				border: 5px solid $dark-grey;
-				opacity: 1.0;
-				@include border-radius(50%);
-				@include transition(all 100ms ease-out 0s);
-			}
-
-			.bar-6{
-				opacity: 0.0;
-				@include transition(all 0ms ease-out 0s);
-			}
-
-			.bar-7{
-				top: 20px;
-				width: 30px;
-				left: 8px;
-				opacity: 1.0;
-				@include border-radius(2px);
-          animation-duration: 1s;
-          animation-name: rotate;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-			}
-		}
-  }
+  background: #34495e;
 }
 
-.menu-toggle{
-	position: fixed;
-	height: 50px;
-	width: 30px;
-	margin: 0 auto;
-	top: 20px;
-  left: 30px;
+ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul li {
+  list-style-type: none;
+  margin: 20px 0;
+  font-size: 26px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
   cursor: pointer;
-  @include translate3d(2000px, 0px, 0px);
-	@include transition(all 800ms ease-out 0ms);
 
-  &:hover{
-
-    .bar-1,{
-      top: -1px;
-    }
-
-    .bar-3{
-      top: 10px;
-    }
-
-    .bar-6{
-      top: 21px;
-    }
-
-    .menu-bar{
-      background-color: $red;
-    }
-  }
-}
-
-.menu-bar{
-	width: 30px;
-	height: 5px;
-	left: 0px;
-	background-color: $dark-grey;
-	position: absolute;
-	@include transition(all 800ms ease-out 0ms);
-	@include rotate(0deg);
-}
-
-.bar-1{
-	top: 0px;
-	@include transform-origin(0px, 5px);
-}
-
-.bar-3{
-	top: 8px;
-}
-
-.bar-6{
-	top: 16px;
-}
-
-.bar-7{
-	opacity: 0.0;
-	top: 8px;
-}
-
-.nav-links{
-  margin-top: 60px;
-  text-align: center;
-
-   .menu-item{
-    // padding: 1.5rem;
-    font-size: 3vw;
-    text-transform: uppercase;
-    @include transition(all 100ms ease-out);
-
-
-    a{
-      text-decoration: none;
-      color: $dark-grey;
-      @include transition(all 100ms ease-out);
-    }
-
-    &:hover{
-      background-color: $red;
-
-      a{
-        color: white;
-      }
-    }
+  &:hover {
+    transform: translateX(-10px);
   }
 }
