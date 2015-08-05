@@ -29,10 +29,15 @@ jQuery(document).ready(function( $ ) {
       if ( ~className.indexOf(' active ') ) {
           hexNav.className = className.replace(' active ', ' ');
         $menu.fadeOut();
+        $('body').css({
+        'overflow':'',
+      });
       } else {
           hexNav.className += ' active';
         $menu.fadeIn();
-      }
+        $('body').css({
+        'overflow':'hidden',
+      });
+    }
   };
-
 });

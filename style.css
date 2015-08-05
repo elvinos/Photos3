@@ -12,7 +12,7 @@ body {
 
 /* line 10, ../scss/_globals.scss */
 .head {
-  height: 60px;
+  height: 80px;
   text-align: right;
   background-color: white;
   padding: 18px 60px 20px 15px;
@@ -59,7 +59,18 @@ body > .container {
 /*
 Navagation Menu
 */
-/* line 253, ../scss/_globals.scss */
+/* line 52, ../scss/_globals.scss */
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+/* line 67, ../scss/_globals.scss */
 #hevNav {
   position: relative;
   width: 100%;
@@ -69,38 +80,26 @@ Navagation Menu
   z-index: 9999;
 }
 
-/* line 262, ../scss/_globals.scss */
-.overlay {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  background: #34495e;
-  z-index: 20;
-}
-
 /** MENU BUTTON ******************************************/
-/* line 273, ../scss/_globals.scss */
+/* line 78, ../scss/_globals.scss */
 #menuBtn {
   position: absolute;
-  top: 20px;
+  top: 15px;
   left: 30px;
   width: 50px;
   height: 30px;
   z-index: 1000;
 }
-/* line 279, ../scss/_globals.scss */
+/* line 84, ../scss/_globals.scss */
 #menuBtn svg {
   display: block;
 }
-/* line 282, ../scss/_globals.scss */
+/* line 87, ../scss/_globals.scss */
 #menuBtn svg polygon:hover {
   animation: hexHover 0.7s;
   cursor: pointer;
 }
-/* line 286, ../scss/_globals.scss */
+/* line 91, ../scss/_globals.scss */
 #menuBtn .bars {
   box-sizing: initial;
   position: absolute;
@@ -115,7 +114,7 @@ Navagation Menu
   transition: background-color 0.5s;
   pointer-events: none;
 }
-/* line 297, ../scss/_globals.scss */
+/* line 102, ../scss/_globals.scss */
 #menuBtn .bars:before, #menuBtn .bars:after {
   position: absolute;
   background-color: #585247;
@@ -124,11 +123,11 @@ Navagation Menu
   height: 2px;
   transition: transform 0.5s;
 }
-/* line 304, ../scss/_globals.scss */
+/* line 109, ../scss/_globals.scss */
 #menuBtn .bars:before {
   top: 0;
 }
-/* line 304, ../scss/_globals.scss */
+/* line 109, ../scss/_globals.scss */
 #menuBtn .bars:after {
   bottom: 0px;
 }
@@ -145,54 +144,63 @@ Navagation Menu
   }
 }
 /** MENU ITEMS *******************************************/
-/* line 317, ../scss/_globals.scss */
+/* line 122, ../scss/_globals.scss */
 .active #menuBtn:hover svg polygon {
   animation: none;
 }
-/* line 320, ../scss/_globals.scss */
+/* line 125, ../scss/_globals.scss */
 .active #menuBtn .bars {
   background-color: transparent;
 }
-/* line 322, ../scss/_globals.scss */
+/* line 127, ../scss/_globals.scss */
 .active #menuBtn .bars:before {
   transform: translatey(8px) rotate(45deg);
 }
-/* line 325, ../scss/_globals.scss */
+/* line 130, ../scss/_globals.scss */
 .active #menuBtn .bars:after {
   transform: translatey(-8px) rotate(-45deg);
 }
 
-/* line 332, ../scss/_globals.scss */
+/* line 137, ../scss/_globals.scss */
 .overlay {
-  display: none;
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background: #34495e;
+  width: 100%;
+  height: 100%;
+  background: #282828;
+  z-index: 199;
+  display: none;
 }
-
-/* line 342, ../scss/_globals.scss */
-ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* line 146, ../scss/_globals.scss */
+.overlay ul {
+  padding-top: 60px;
+  list-style: none;
 }
-
-/* line 349, ../scss/_globals.scss */
-ul li {
-  list-style-type: none;
-  margin: 20px 0;
-  font-size: 26px;
+/* line 149, ../scss/_globals.scss */
+.overlay ul li {
+  display: block;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 3vw;
   text-transform: uppercase;
-  transition: all 0.2s ease;
-  cursor: pointer;
+  -moz-transition: all 100ms ease-out;
+  -o-transition: all 100ms ease-out;
+  -webkit-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
 }
-/* line 357, ../scss/_globals.scss */
-ul li:hover {
-  transform: translateX(-10px);
+/* line 158, ../scss/_globals.scss */
+.overlay ul li a {
+  text-decoration: none;
+  color: white;
+  -moz-transition: all 100ms ease-out;
+  -o-transition: all 100ms ease-out;
+  -webkit-transition: all 100ms ease-out;
+  transition: all 100ms ease-out;
+}
+/* line 165, ../scss/_globals.scss */
+.overlay ul li:hover a {
+  color: #585247;
 }
 
 /* line 3, ../scss/pages/_offcan.scss */
@@ -302,7 +310,7 @@ nav.toggle-nav {
 /* Better Performing Method */
 /* line 88, ../scss/pages/_offcan.scss */
 #site-canvas {
-  padding-top: 60px;
+  padding-top: 80px;
   padding-bottom: 120px;
   -webkit-transform: translate3d(0);
   transform: translate3d(0);
