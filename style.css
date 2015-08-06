@@ -6,7 +6,7 @@ html {
 
 /* line 5, ../scss/_globals.scss */
 body {
-  background-color: #dcdcdc;
+  background-color: white;
   overflow-x: hidden;
 }
 
@@ -28,11 +28,13 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
+  height: 80px;
+  margin-top: 20px;
+  padding-top: 15px;
+  background-color: #282828;
 }
 
-/* line 30, ../scss/_globals.scss */
+/* line 32, ../scss/_globals.scss */
 body.admin-bar .navbar {
   position: fixed;
   top: 28px;
@@ -40,26 +42,106 @@ body.admin-bar .navbar {
   height: 40px;
 }
 
-/* line 37, ../scss/_globals.scss */
+/* line 39, ../scss/_globals.scss */
 body > .container {
-  padding: 60px 15px 0;
+  padding: 80px 15px 0;
 }
 
-/* line 40, ../scss/_globals.scss */
+/* line 42, ../scss/_globals.scss */
 .container .text-muted {
   margin: 20px 0;
 }
 
-/* line 44, ../scss/_globals.scss */
+/* line 46, ../scss/_globals.scss */
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
 }
 
+/* line 53, ../scss/_globals.scss */
+.carousel, .item, .active {
+  height: calc(100vh - 80px);
+}
+
+/* line 56, ../scss/_globals.scss */
+.carousel-inner {
+  height: calc(100vh - 80px);
+}
+
+/* line 60, ../scss/_globals.scss */
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+  display: block;
+  /* max-width: 100%; */
+  height: calc(100vh - 80px);
+  max-width: none;
+  width: auto;
+}
+
+/* line 68, ../scss/_globals.scss */
+.carousel-inner img {
+  /* max-width: 100%; */
+  width: auto;
+  height: calc(100vh - 80px);
+  vertical-align: middle;
+  max-width: none;
+}
+
+@media (max-width: 600px) {
+  /* line 78, ../scss/_globals.scss */
+  .carousel, .item, .active {
+    height: 50vh;
+  }
+
+  /* line 81, ../scss/_globals.scss */
+  .carousel-inner {
+    height: 50vh;
+  }
+
+  /* line 85, ../scss/_globals.scss */
+  .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    height: 50vh;
+  }
+
+  /* line 89, ../scss/_globals.scss */
+  .carousel-inner img {
+    height: 50vh;
+  }
+}
+@media (max-height: 700px) and (min-width: 600px) {
+  /* line 96, ../scss/_globals.scss */
+  .carousel, .item, .active {
+    width: 100%;
+    height: auto;
+  }
+
+  /* line 100, ../scss/_globals.scss */
+  .carousel-inner {
+    width: 100%;
+    height: auto;
+  }
+
+  /* line 105, ../scss/_globals.scss */
+  .carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* line 110, ../scss/_globals.scss */
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+  }
+}
+/* line 116, ../scss/_globals.scss */
+#singleHex {
+  width: 17.364%;
+  /* = (100-4.5) / 5.5 */
+}
+
 /*
 Navagation Menu
 */
-/* line 52, ../scss/_globals.scss */
+/* line 124, ../scss/_globals.scss */
 ul, menu, dir {
   display: block;
   list-style-type: disc;
@@ -70,9 +152,9 @@ ul, menu, dir {
   -webkit-padding-start: 0px;
 }
 
-/* line 67, ../scss/_globals.scss */
+/* line 139, ../scss/_globals.scss */
 #hevNav {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -81,25 +163,25 @@ ul, menu, dir {
 }
 
 /** MENU BUTTON ******************************************/
-/* line 78, ../scss/_globals.scss */
+/* line 149, ../scss/_globals.scss */
 #menuBtn {
-  position: absolute;
+  position: fixed;
   top: 15px;
   left: 30px;
   width: 50px;
   height: 30px;
   z-index: 1000;
 }
-/* line 84, ../scss/_globals.scss */
+/* line 155, ../scss/_globals.scss */
 #menuBtn svg {
   display: block;
 }
-/* line 87, ../scss/_globals.scss */
+/* line 158, ../scss/_globals.scss */
 #menuBtn svg polygon:hover {
   animation: hexHover 0.7s;
   cursor: pointer;
 }
-/* line 91, ../scss/_globals.scss */
+/* line 162, ../scss/_globals.scss */
 #menuBtn .bars {
   box-sizing: initial;
   position: absolute;
@@ -114,7 +196,7 @@ ul, menu, dir {
   transition: background-color 0.5s;
   pointer-events: none;
 }
-/* line 102, ../scss/_globals.scss */
+/* line 173, ../scss/_globals.scss */
 #menuBtn .bars:before, #menuBtn .bars:after {
   position: absolute;
   background-color: #585247;
@@ -123,11 +205,11 @@ ul, menu, dir {
   height: 2px;
   transition: transform 0.5s;
 }
-/* line 109, ../scss/_globals.scss */
+/* line 180, ../scss/_globals.scss */
 #menuBtn .bars:before {
   top: 0;
 }
-/* line 109, ../scss/_globals.scss */
+/* line 180, ../scss/_globals.scss */
 #menuBtn .bars:after {
   bottom: 0px;
 }
@@ -144,24 +226,24 @@ ul, menu, dir {
   }
 }
 /** MENU ITEMS *******************************************/
-/* line 122, ../scss/_globals.scss */
+/* line 193, ../scss/_globals.scss */
 .active #menuBtn:hover svg polygon {
   animation: none;
 }
-/* line 125, ../scss/_globals.scss */
+/* line 196, ../scss/_globals.scss */
 .active #menuBtn .bars {
   background-color: transparent;
 }
-/* line 127, ../scss/_globals.scss */
+/* line 198, ../scss/_globals.scss */
 .active #menuBtn .bars:before {
   transform: translatey(8px) rotate(45deg);
 }
-/* line 130, ../scss/_globals.scss */
+/* line 201, ../scss/_globals.scss */
 .active #menuBtn .bars:after {
   transform: translatey(-8px) rotate(-45deg);
 }
 
-/* line 137, ../scss/_globals.scss */
+/* line 208, ../scss/_globals.scss */
 .overlay {
   position: fixed;
   top: 0;
@@ -172,12 +254,12 @@ ul, menu, dir {
   z-index: 199;
   display: none;
 }
-/* line 146, ../scss/_globals.scss */
+/* line 217, ../scss/_globals.scss */
 .overlay ul {
   padding-top: 60px;
   list-style: none;
 }
-/* line 149, ../scss/_globals.scss */
+/* line 220, ../scss/_globals.scss */
 .overlay ul li {
   display: block;
   text-align: center;
@@ -189,7 +271,7 @@ ul, menu, dir {
   -webkit-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
 }
-/* line 158, ../scss/_globals.scss */
+/* line 229, ../scss/_globals.scss */
 .overlay ul li a {
   text-decoration: none;
   color: white;
@@ -198,9 +280,86 @@ ul, menu, dir {
   -webkit-transition: all 100ms ease-out;
   transition: all 100ms ease-out;
 }
-/* line 165, ../scss/_globals.scss */
+/* line 236, ../scss/_globals.scss */
 .overlay ul li:hover a {
   color: #585247;
+}
+
+/* line 1, ../scss/_shapes.scss */
+.hexagon {
+  position: relative;
+  margin: 30px auto 60px;
+  padding-bottom: 60px;
+  width: 190px;
+  height: 110px;
+  background-color: #282828;
+  background-image: url("<?php echo get_stylesheet_directory_uri() ?>/img/amasta.jpeg");
+  background-position: center center;
+  z-index: 1;
+  /* Text styling */
+  line-height: 110px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 500ms ease, text-shadow 500ms ease;
+}
+
+/* line 22, ../scss/_shapes.scss */
+.hexagon:hover {
+  color: #fff;
+}
+
+/* line 26, ../scss/_shapes.scss */
+.hexagon .face1,
+.hexagon .face2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: inherit;
+  z-index: -1;
+  /* Keeps borders smooth in webkit */
+  backface-visibility: hidden;
+}
+
+/* line 39, ../scss/_shapes.scss */
+.hexagon .face1:before,
+.hexagon .face2:before {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: inherit;
+}
+
+/* line 48, ../scss/_shapes.scss */
+.hexagon .face1 {
+  transform: rotate(60deg);
+}
+
+/* line 49, ../scss/_shapes.scss */
+.hexagon .face1:before {
+  left: 0;
+  transform-origin: left top;
+  transform: rotate(-60deg) translate(-110px, 0);
+}
+
+/* line 55, ../scss/_shapes.scss */
+.hexagon .face2 {
+  transform: rotate(-60deg);
+}
+
+/* line 56, ../scss/_shapes.scss */
+.hexagon .face2:before {
+  right: 0;
+  transform-origin: right top;
+  transform: rotate(60deg) translate(110px, 0);
 }
 
 /* line 3, ../scss/pages/_offcan.scss */
@@ -341,7 +500,7 @@ nav.toggle-nav {
   min-height: 100%;
   overflow: hidden;
   width: 100%;
-  margin: 60px auto 70px;
+  margin: 60px auto 200px;
 }
 
 /* line 8, ../scss/pages/_hex.scss */

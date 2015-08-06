@@ -18,15 +18,6 @@
 
 <?php echo '<body class="'.join(' ', get_body_class()).'">'.PHP_EOL; ?>
 
-
-    <!-- <nav class="nav-main" role="navigation">
-      <ul class="menu-toggle">
-        <li class="menu-bar bar-1">
-        <li class="menu-bar bar-3">
-        <li class="menu-bar bar-6">
-        <li class="menu-bar bar-7">
-      </ul> -->
-
 <div class="container-fluid">
 
       <nav id="hexNav">
@@ -62,15 +53,6 @@
         wp_nav_menu( $defaults );
 
         ?>
-
-      <!-- <ul class="nav-links">
-          <li class="nav-link link-1"><a href="#" data-section="1">Newt Gingrinch</a></li>
-          <li class="nav-link link-2"><a href="#" data-section="2">Kermit</a></li>
-          <li class="nav-link link-3"><a href="#" data-section="3">Wembley</a></li>
-          <li class="nav-link link-4"><a href="#" data-section="4">Wicket</a></li>
-        </ul> -->
-      <!-- </nav>
-    </div> -->
 
   </div>
   </nav>
