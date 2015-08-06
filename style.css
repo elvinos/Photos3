@@ -191,7 +191,7 @@ ul, menu, dir {
   height: 2px;
   padding: 8px 0;
   background-clip: content-box;
-  background-color: #585247;
+  background-color: #313131;
   transform: translate(-50%, -50%);
   transition: background-color 0.5s;
   pointer-events: none;
@@ -199,7 +199,7 @@ ul, menu, dir {
 /* line 173, ../scss/_globals.scss */
 #menuBtn .bars:before, #menuBtn .bars:after {
   position: absolute;
-  background-color: #585247;
+  background-color: #313131;
   content: '';
   width: 20px;
   height: 2px;
@@ -469,7 +469,7 @@ nav.toggle-nav {
 /* Better Performing Method */
 /* line 88, ../scss/pages/_offcan.scss */
 #site-canvas {
-  padding-top: 80px;
+  padding-top: 60px;
   padding-bottom: 120px;
   -webkit-transform: translate3d(0);
   transform: translate3d(0);
