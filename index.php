@@ -12,7 +12,7 @@
           <h2 class="featurette-heading"><?php the_title(); ?><span class="text-muted">It'll blow your mind.</span></h2>
           <p class="lead"><?php the_content(); ?></p>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
         </div>
           <div class="col-md-2">
             <div class="hexagon">

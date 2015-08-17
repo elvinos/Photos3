@@ -25,8 +25,6 @@ function theme_js() {
 }
 wp_enqueue_script( 'index_js', get_template_directory_uri() . '/js/index.js', array('jquery'), '', true );
 
-wp_enqueue_script( 'theme_js', get_template_directory_uri() . '/js/theme.js', array('jquery','bootstrap_js'), '', true );
-
 wp_enqueue_script( 'offcan_js', get_template_directory_uri() . '/js/offcan.js', array('jquery','bootstrap_js'), '', true );
 
 add_action('wp_enqueue_scripts', 'index_js');
@@ -45,3 +43,10 @@ function register_theme_menus() {
 		);
 }
 add_action('init','register_theme_menus');
+
+
+// add categories to attachments
+function wptp_add_categories_to_attachments() {
+      register_taxonomy_for_object_type( 'category', 'attachment' );
+}
+add_action( 'init' , 'wptp_add_categories_to_attachments' );

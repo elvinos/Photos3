@@ -1,6 +1,7 @@
 <?php /*
   Template Name: Treehouse Carousel Template
 */ ?>
+
 <?php get_header(); ?>
 
 
@@ -48,7 +49,7 @@
 
             <?php endwhile; endif; ?>
 
-          </div>
+        </div>
 
           <!-- Controls -->
           <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -61,8 +62,6 @@
 
 
         </div>
-
-
 
       </div>
 

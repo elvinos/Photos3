@@ -3,14 +3,15 @@ html {
   min-height: 100%;
 }
 body {
-  background-color: white;
+  background-color: $background-color;
   overflow-x: hidden;
+  // font-color:white;
 }
 
 .head {
-  height: 80px;
+  height: $header-height;
   text-align: right;
-  background-color: white;
+  // background-color: white;
   padding: 18px 60px 20px 15px;
 
   span {
@@ -23,8 +24,8 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 80px;
-  margin-top: 20px;
+  height: $footer-height;
+  margin-top: 60px;
   padding-top: 15px;
   background-color: #282828;
 }
@@ -214,6 +215,7 @@ $rotateStep: 60deg;
   background: #282828;
   z-index: 199;
   display: none;
+  overflow-y: scroll;
   ul {
   padding-top: 60px;
   list-style: none;
