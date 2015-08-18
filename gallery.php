@@ -9,7 +9,12 @@ Template Name: Gallery
 
 
 <div class="container-fluid" id="grid">
-<nav class="toggle-nav btn btn-lg" id="Gallery-Toggle"><i class="glyphicon glyphicon-info-sign"></i> </nav>
+  <div class="container-fluid" id="Gallery-Nav">
+  <!-- <a  class="btn-default btn-lg" id="Home-Button" ><span class="glyphicon glyphicon-home"></span> </a> -->
+  <a id="Home-Button" ><span class="glyphicon glyphicon-home"></span> </a>
+</div>
+
+
   <div class="grid">
 
     <?php
@@ -22,11 +27,13 @@ Template Name: Gallery
         $term_id = $category->term_id;
         $image   = category_image_src( array('term_id'=>$term_id) , false );
         $name = $category->name;
-      ?>
+        $category_id = get_cat_ID( 'Category Name' );
+        $category_link = get_category_link( $category_id );
+?>
 
         <div class="block full medium-half large-one-third type-image" data-order="" data-order-medium="" data-order-large="">
              <div class="block-inner ">
-               <a href="<?php the_permalink(); ?>" class="block-content">
+               <a href="<?php echo esc_url( $category_link ); ?>" class="block-content">
                  <div class="content-rollover no-caption">
 
                    <div class="background">

@@ -1,5 +1,10 @@
 
-<?php get_header(); ?>
+<?php
+
+/*
+Template Name: category-images
+*/
+ get_header(); ?>
 
 
 <div id="site-wrapper">
