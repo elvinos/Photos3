@@ -11,10 +11,15 @@ Template Name: Offcan
 
     <?php if  ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <div class="container-fluid" id="centre-buttons">
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of c5dfcdf... Fixed Category Page - Have Working links
   <span class= "button">
-    <?php next_post_smart ('%link', '<nav class="btn btn-lg" id="big-sexy"><i class="glyphicon glyphicon-chevron-left"></i> </nav>', TRUE ); ?>
-    <a href="<?php echo esc_url( home_url() ) ?>"> <span class="glyphicon glyphicon-th"></span></a>
-    <?php previous_post_smart ('%link', '<nav class="btn btn-lg"><i class="glyphicon glyphicon-chevron-right"></i> </nav>', TRUE ); ?>
+    <?php previous_post_link ('%link', '<nav class="btn btn-lg" id="big-sexy"><i class="glyphicon glyphicon-chevron-left"></i> </nav>', TRUE ); ?>
+    <a href="<?php bloginfo('url'); ?>"> <span class="glyphicon glyphicon-th"></span></a>
+    <?php next_post_link ('%link', '<nav class="btn btn-lg"><i class="glyphicon glyphicon-chevron-right"></i> </nav>', TRUE ); ?>
   </span>
   <nav class="toggle-nav btn btn-lg" id="big-sexy"><i class="glyphicon glyphicon-info-sign"></i> </nav>
     </div>
@@ -27,7 +32,7 @@ Template Name: Offcan
 
   <?php
     $thumbnail_id = get_post_thumbnail_id();
-    $thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', false );
+    $thumbnail_url = wp_get_attachment_image_src( $thumbnail_id, 'thumbnail-size', true );
 ?>
 <div class="container-fluid">
 
