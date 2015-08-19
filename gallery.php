@@ -33,7 +33,7 @@ Template Name: Gallery
 
         <div class="block full medium-half large-one-third type-image" data-order="" data-order-medium="" data-order-large="">
              <div class="block-inner ">
-               <a href="<?php echo esc_url( $category_link ); ?>" class="block-content">
+               <a href="<?php the_permalink(); ?>" class="block-content">
                  <div class="content-rollover no-caption">
 
                    <div class="background">
